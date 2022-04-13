@@ -9,10 +9,10 @@ const ChocolateBasket = () => {
 
     const chocBasketNodes = basket.map((chocolate, index) => {
         return (
-        <>
+        
         <ChocolateItem key={index} name={chocolate.name} price={chocolate.price} />
         
-        </>)
+        )
     })
     
 
