@@ -20,5 +20,5 @@ export const useAdd = () => {
         setTotalBasket(total)
     }
 
-    return [selectedChocolate, chocolatesInBasket, totalBasket, onChocolateClick, addToBasket, getTotalBasket]
+    return {selectedChocolate, chocolatesInBasket, totalBasket, onChocolateClick, addToBasket, getTotalBasket}
 }

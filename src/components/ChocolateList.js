@@ -5,7 +5,7 @@ import { useAdd } from "../hook";
 
 const ChocolateList = () => {
 
-    let [selectedChocolate, onChocolateClick, addToBasket] = useAdd()
+    let {selectedChocolate, onChocolateClick, addToBasket} = useAdd()
     
     const {chocolates} = useContext(ChocolateContext);
 
@@ -13,8 +13,8 @@ const ChocolateList = () => {
         return (
         
         <>
-        <ChocolateItem key={index} name={chocolate.name} price={chocolate.price} brand={chocolate.brand} addtoBasket={addToBasket}/>
-        <button >Add Item</button>
+        <ChocolateItem key={index} name={chocolate.name} price={chocolate.price} brand={chocolate.brand} />
+        <button onClick={addToBasket}>Add Item</button>
         </>
         )
     })
