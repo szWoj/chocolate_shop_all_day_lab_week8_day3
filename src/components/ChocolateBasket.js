@@ -1,6 +1,7 @@
 import React ,{useContext} from "react";
 import ChocolateItem from "./ChocolateItem";
 import ChocolateContext from "../context/ChocolateContext";
+import ChocolateItemBasket from "./ChocolateItemBasket";
 
 
 const ChocolateBasket = () => {
@@ -9,18 +10,19 @@ const ChocolateBasket = () => {
 
     const chocBasketNodes = basket.map((chocolate, index) => {
         return (
-        
-        <ChocolateItem key={index} name={chocolate.name} price={chocolate.price} />
-        
+        <ul>
+            <li><ChocolateItemBasket key={index} chocolate={chocolate} /></li>
+        </ul>
         )
     })
     
 
     return(
         <>
+        <h4>Your basket</h4>
         {chocBasketNodes}
         </>
     )
 }
 
-export default ChocolateBasket
+export default ChocolateBasket;

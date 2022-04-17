@@ -30,10 +30,16 @@ const MainChocolateContainer = () => {
     }]
     );
 
+    const onAddToBasket = function(chocolate){
+        const temp = [...basket]
+        temp.push(chocolate)
+        setBasket(temp)
+    }
+
 
     return(
         <>
-        <ChocolateContext.Provider value={{basket, chocolates}}>
+        <ChocolateContext.Provider value={{basket, setBasket, chocolates, onAddToBasket}}>
             <ChocolateList />
             <ChocolateBasket />
         </ChocolateContext.Provider>

@@ -5,16 +5,23 @@ import { useAdd } from "../hook";
 
 const ChocolateList = () => {
 
-    let {selectedChocolate, onChocolateClick, addToBasket} = useAdd()
+    // let {selectedChocolate, onChocolateClick, addToBasket} = useAdd()
     
-    const {chocolates} = useContext(ChocolateContext);
+    const {chocolates, basket, setBasket, onAddToBasket} = useContext(ChocolateContext);
 
+    
+    
+    
     const chocListNodes = chocolates.map((chocolate, index) => {
+        
+    
+        
         return (
         
         <>
-        <ChocolateItem key={index} name={chocolate.name} price={chocolate.price} brand={chocolate.brand} />
-        <button onClick={addToBasket}>Add Item</button>
+        <ChocolateItem key={index} chocolate={chocolate} />
+       
+        
         </>
         )
     })

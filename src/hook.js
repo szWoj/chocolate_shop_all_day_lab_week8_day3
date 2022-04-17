@@ -17,7 +17,8 @@ export const useAdd = () => {
 
     const getTotalBasket = function(){
         const total = chocolatesInBasket.length()
-        setTotalBasket(total)
+        return total;
+        
     }
 
     return {selectedChocolate, chocolatesInBasket, totalBasket, onChocolateClick, addToBasket, getTotalBasket}
